@@ -23,9 +23,13 @@
 
     <hr>
 
-    <ul class="p-5">
-        @foreach ($users as $user)
-            <li>{{ $user->name }}</li>
-        @endforeach
-    </ul>
+    <div class="p-5">
+        <ul>
+            @foreach ($users as $user)
+                <li>{{ $user->name }}</li>
+            @endforeach
+        </ul>
+
+        {{ $users->links('vendor.livewire.test') }}
+    </div>
 </div>

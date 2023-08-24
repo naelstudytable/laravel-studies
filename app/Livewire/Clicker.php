@@ -9,13 +9,13 @@ use Livewire\Component;
 class Clicker extends Component
 {
     #[Rule('required|min:2|max:50')]
-    public $name;
+    public $name = '';
 
     #[Rule('required|email|unique:users')]
-    public $email;
+    public $email = '';
 
     #[Rule('required|min:2')]
-    public $password;
+    public $password = '';
 
     public function createNewUser()
     {
@@ -26,6 +26,10 @@ class Clicker extends Component
             'email' => $this->email,
             'password' => $this->password,
         ]);
+
+        $this->reset(['name', 'email', 'password']);
+
+        request()->session()->flash('success', 'User Created Successfully');
     }
 
     public function render()

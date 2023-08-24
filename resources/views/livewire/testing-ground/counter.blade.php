@@ -1,4 +1,4 @@
-<div class="mb-4">
+<div>
     <h4 class="text-2xl mb-2">Counter</h4>
 
     <div class="flex gap-6">

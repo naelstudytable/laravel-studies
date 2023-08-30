@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Todo\Todo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('todo')->group(function () {
+    Route::get('/', Todo::class)->name('todo.index');
 });

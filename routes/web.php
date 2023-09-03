@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\RegisterForm;
 use App\Livewire\Todo\Todo;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Route::prefix('todo')->group(function () {
     Route::get('/', Todo::class)->name('todo.index');
 });
+
+Route::get('/register-form', RegisterForm::class)->name('registerForm');

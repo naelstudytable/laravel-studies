@@ -3,6 +3,9 @@
         <h2 class="text-3xl font-bold mb-2">Todo list</h2>
 
         <div class="p-6 bg-white border border-gray-200 rounded-lg shadow">
+            @if(session('error'))
+                <div class="px-3 py-1 border border-red-500 bg-red-300 rounded">{{ session('error') }}</div>
+            @endif
             <form wire:submit.prevent='createTask' class="mb-6">
                 @if(session('success'))
                     <div class="px-3 py-1 border border-green-500 bg-green-300 rounded">{{ session('success') }}</div>
@@ -36,21 +39,21 @@
             <div>
                 <div class="flex justify-center mb-6">
                     <input
-                        wire:model.live='search'
+                        wire:model.live.debounce.500ms='search'
                         type="text"
                         class="w-1/2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                         focus:border-blue-500 block p-2.5"
                         placeholder="Search...">
                 </div>
 
-                <div class="max-h-80 overflow-y-auto">
+                <div>
                     @forelse ($tasks as $key => $task)
                         <div wire:key='{{ $task->id }}' class="mb-2 px-6 py-2 bg-white border border-gray-200 rounded-lg shadow">
                             <div class="flex gap-6">
                                 <lable class="flex">
                                     <input
                                         type="checkbox"
-                                        wire:click="toogleDoneTask({{ $task }})"
+                                        wire:click="toogleDoneTask({{ $task->id }})"
                                         @if($task->done) checked @endif><br>
                                 </lable>
                                 <div class="w-full flex justify-between flex-col-reverse lg:flex-row">
@@ -68,6 +71,9 @@
                                                     focus:border-blue-500 block w-full p-2.5"
                                                     name="content"
                                                     >
+                                                    @error('contentEdit')
+                                                        <small class="text-red-500">{{ $message }}</small>
+                                                    @enderror
                                             </div>
                                             <div class="flex gap-3">
                                                 <button
@@ -89,12 +95,12 @@
                                     <div class="flex justify-end items-start gap-1">
                                         <button
                                             title="Edit"
-                                            wire:click='toogleTaskInEdition({{$task}})'
+                                            wire:click='toogleTaskInEdition({{$task->id}})'
                                             type="button"
                                             class="text-orange-300 hover:text-orange-500 px-1 rounded">E</button>
                                         <button
                                             title="Delete"
-                                            wire:click='deleteTask({{$task}})'
+                                            wire:click='deleteTask({{$task->id}})'
                                             type="button"
                                             class="text-red-500 hover:text-red-700 px-1 rounded">D</button>
                                     </div>
@@ -107,6 +113,7 @@
                             <strong>Create your tasks.</strong>
                         </div>
                     @endforelse
+                    {{ $tasks->links() }}
                 </div>
             </div>
         </div>

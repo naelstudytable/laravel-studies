@@ -6,9 +6,12 @@ use App\Models\Task;
 use Livewire\Attributes\Rule;
 use Livewire\Attributes\Url;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Todo extends Component
 {
+    use WithPagination;
+
     #[Rule('required|min:3')]
     public $contentNewTask;
 
@@ -16,14 +19,16 @@ class Todo extends Component
     public $search = '';
 
     public ?Task $taskInEdition = null;
+
+    #[Rule('required|min:3')]
     public $contentEdit = '';
 
     public function render()
     {
-        $tasks = Task::when(
+        $tasks = Task::latest()->when(
             trim($this->search) !== '',
             fn($t) => $t->where('content', 'LIKE', "%{$this->search}%")
-        )->get();
+        )->paginate(5);
 
         return view('livewire.todo.todo', [
             'tasks' => $tasks
@@ -32,7 +37,7 @@ class Todo extends Component
 
     public function createTask()
     {
-        $this->validate();
+        $this->validateOnly('contentNewTask');
 
         Task::create([
             'content' => $this->contentNewTask
@@ -41,15 +46,19 @@ class Todo extends Component
         $this->reset(['contentNewTask', 'taskInEdition']);
 
         request()->session()->flash('success', 'A new task has been created');
+
+        $this->resetPage();
     }
 
     public function updateTask()
     {
+        $this->validateOnly('contentEdit');
+
         $this->taskInEdition->update([
             'content' => $this->contentEdit
         ]);
 
-        $this->reset(['taskInEdition', 'contentEdit']);
+        $this->toogleTaskInEdition($this->taskInEdition);
     }
 
     public function toogleDoneTask(Task $task)
@@ -59,9 +68,14 @@ class Todo extends Component
         ]);
     }
 
-    public function deleteTask(Task $task)
+    public function deleteTask($taskID)
     {
-        $task->delete();
+        try {
+            Task::findOrFail($taskID)->delete();
+        } catch (\Throwable $th) {
+            session()->flash('error', 'Failed to delete task!');
+            return;
+        }
     }
 
     public function toogleTaskInEdition(Task $task)

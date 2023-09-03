@@ -38,10 +38,12 @@ class RegisterForm extends Component
             $validated['photo'] = $this->photo->store('uploads', 'public');
         }
 
-        User::created($validated);
+        $user = User::create($validated);
 
         $this->reset('name', 'email', 'password', 'photo');
 
         session()->flash('success', 'User Created!');
+
+        $this->dispatch('user-created', $user);
     }
 }

@@ -66,14 +66,20 @@
 
                     @if($photo)
                         <div wire:loading wire:target='photo'>
-                            <small class="text-gray-500">Update...</small>
+                            <small class="text-gray-500">Uploading...</small>
                         </div>
                         <img class="rounded w-10 h-10 block mt-6" src="{{ $photo->temporaryUrl() }}">
                     @endif
                 </div>
 
+                <div wire:loading.delay.longest class="mb-4">
+                    <span class="text-gray-500">Sending...</span>
+                </div>
+
                 <div>
                     <button
+                        wire:loading.class='bg-gray-300'
+                        wire:loading.attr='disabled'
                         type="submit"
                         class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                         Create

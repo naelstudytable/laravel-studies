@@ -1,4 +1,6 @@
-<div>
+{{-- wire:poll.keep-alive: when you want this component to be polled even when users are in different browser tabs --}}
+{{-- wire:poll.visible: when you want this component to be polled only when it's visible on the screen. --}}
+<div wire:poll>
     <div class="p-6">
         <div class="relative overflow-x-auto rounded-lg shadow">
             <table class="w-full text-sm text-left text-gray-500">

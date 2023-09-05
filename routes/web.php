@@ -3,6 +3,7 @@
 use App\Livewire\ListAndRegisterUsers;
 use App\Livewire\RegisterForm;
 use App\Livewire\Todo\Todo;
+use App\Livewire\UsersList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,5 @@ Route::prefix('todo')->group(function () {
 });
 
 Route::get('/register-form', RegisterForm::class)->name('registerForm');
+Route::get('/users-list', UsersList::class)->name('usersList');
 Route::get('/list-and-register-users', ListAndRegisterUsers::class)->name('listAndRegisterUsers');

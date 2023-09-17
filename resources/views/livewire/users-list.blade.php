@@ -38,8 +38,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
-                        <tr class="bg-white">
+                    @foreach ($this->users as $user)
+                        <tr class="bg-white" wire:key='{{ $user->id }}'>
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 <div>
                                     <img class="w-10 h-10 rounded-lg" src="{{ $user->photo }}" alt="{{$user->name}}">
@@ -60,7 +60,7 @@
             </table>
         </div>
         <div class="mt-2">
-            {{ $users->links() }}
+            {{ $this->users->links() }}
         </div>
     </div>
 </div>

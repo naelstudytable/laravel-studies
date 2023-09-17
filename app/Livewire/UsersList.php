@@ -13,15 +13,18 @@ class UsersList extends Component
 
     public $search;
 
+    public function mount($search="")
+    {
+        $this->search = $search;
+    }
+
     #[On('user-created')]
     public function updateList($user = null)
     {
-
     }
 
     public function update()
     {
-
     }
 
     public function placeholder()

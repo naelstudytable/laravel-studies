@@ -26,5 +26,5 @@ Route::prefix('todo')->group(function () {
 });
 
 Route::get('/register-form', RegisterForm::class)->name('registerForm');
-Route::get('/users-list', UsersList::class)->name('usersList');
+Route::get('/users-list/{search?}', UsersList::class)->name('usersList');
 Route::get('/list-and-register-users', ListAndRegisterUsers::class)->name('listAndRegisterUsers');

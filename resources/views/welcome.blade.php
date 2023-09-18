@@ -14,6 +14,9 @@
     </head>
     <body class="antialiased">
 
-        @livewire('clicker')
+        <p><a class="text-blue-500 underline" href="{{route('clicker')}}">Clicker</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('registerForm')}}">registerForm</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('usersList')}}">usersList</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('listAndRegisterUsers')}}">listAndRegisterUsers</a></p>
     </body>
 </html>

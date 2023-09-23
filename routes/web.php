@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Clicker;
+use App\Livewire\ContactUs;
 use App\Livewire\HomePage;
 use App\Livewire\ListAndRegisterUsers;
 use App\Livewire\RegisterForm;
@@ -36,3 +37,4 @@ Route::get('/list-and-register-users', ListAndRegisterUsers::class)->name('listA
 Route::get('/home-page', HomePage::class)->name('homePage');
 Route::get('/user-page/{user?}', UserPage::class)->name('userPage');
 Route::get('/test-simple-page/{user}', TestSimplePage::class)->name('testSimplePage');
+Route::get('/contact-us', ContactUs::class)->name('contactUs');

@@ -22,5 +22,6 @@
         <p><a class="text-blue-500 underline" href="{{route('userPage')}}">userPage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('testSimplePage', ['user' => 20])}}">testSimplePage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('contactUs')}}">contactUs</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('modal')}}">modal</a></p>
     </body>
 </html>

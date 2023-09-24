@@ -35,6 +35,9 @@
                         <th scope="col" class="px-6 py-3">
                             Joined
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Actions
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +57,11 @@
                             <td class="px-6 py-4">
                                 {{ $user->created_at }}
                             </td>
+                            <td class="px-6 py-4">
+                                <div wire:click='viewUser({{$user}})'>
+                                    <x-button text="View"/>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -63,4 +71,14 @@
             {{ $this->users->links() }}
         </div>
     </div>
+
+    <x-modal name="view-user" title="View users">
+        <x-slot:body>
+            @if ($selectedUser)
+                @foreach ($selectedUser->toArray() as $key => $value)
+                    <p><strong>{{$key}}: </strong>{{$value}}</p>
+                @endforeach
+            @endif
+        </x-slot>
+    </x-modal>
 </div>

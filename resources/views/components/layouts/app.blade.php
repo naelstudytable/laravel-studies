@@ -48,7 +48,10 @@
             </div>
         </nav>
 
-
-        {{ $slot }}
+        <div class="w-full sm:w-1/2 mx-auto p-6">
+            <div  class="p-6 bg-white border-spacing-0 rounded-lg shadow">
+                {{ $slot }}
+            </div>
+        </div>
     </body>
 </html>

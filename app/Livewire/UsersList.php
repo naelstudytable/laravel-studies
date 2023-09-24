@@ -14,11 +14,11 @@ class UsersList extends Component
 
     public $search;
 
+    public User $selectedUser;
+
     public function mount($search="")
     {
         $this->search = $search;
-
-        // unset($this->users);
     }
 
     #[On('user-created')]
@@ -26,13 +26,15 @@ class UsersList extends Component
     {
     }
 
-    public function update()
-    {
-    }
-
     public function placeholder()
     {
         return view('placeholder');
+    }
+
+    public function viewUser(User $user)
+    {
+        $this->selectedUser = $user;
+        $this->dispatch('open-modal', name:'view-user');
     }
 
     #[Computed()]

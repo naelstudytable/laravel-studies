@@ -45,5 +45,6 @@ class RegisterForm extends Component
         session()->flash('success', 'User Created!');
 
         $this->dispatch('user-created', $user);
+        $this->dispatch('close-modal');
     }
 }

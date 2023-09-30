@@ -1,7 +1,7 @@
 <div>
-    <div x-on:click="$dispatch('open-modal', {name: 'test'})">
+    <span x-on:click="$dispatch('open-modal', {name: 'test'})">
         <x-button text='Open modal'></x-button>
-    </div>
+    </span>
 
     <div>
         @livewire('users-list')

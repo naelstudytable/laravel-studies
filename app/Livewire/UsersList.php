@@ -26,6 +26,10 @@ class UsersList extends Component
     {
     }
 
+    public function update()
+    {
+    }
+
     public function placeholder()
     {
         return view('placeholder');

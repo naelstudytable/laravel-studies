@@ -4,8 +4,10 @@
     <div class="p-6">
         <div class="flex justify-between items-center w-full mb-4">
             <div class="w-full mr-6">
-                {{-- wire:model.debounce.Xms --}}
-                {{-- wire:model.throttle.Xms --}}
+                {{-- wire:model.live: whenever a user types, it makes requests to synchronize the value in the input field with your property in the backend --}}
+                {{-- wire:model.blur: a request is sent the focus leaves the input --}}
+                {{-- wire:model.debounce.Xms: a network request will only be sent if the user stops typing for at least Xms --}}
+                {{-- wire:model.throttle.Xms: as a user is typing continuously in the "title" field, a network request will be sent every Xms until the user is finished --}}
                 <input
                 wire:model.blur='search'
                 type="search"

@@ -14,20 +14,11 @@
     </head>
     <body class="antialiased">
 
-        <div class="flex justify-end space-x-5">
-            <div>
-                <a class="underline" href="{{ route('login') }}">Login</a>
-            </div>
-            <div>
-                <a class="underline" href="{{ route('register') }}">Register</a>
-            </div>
-        </div>
-
         <p><a class="text-blue-500 underline" href="{{route('clicker')}}">Clicker</a></p>
         <p><a class="text-blue-500 underline" href="{{route('registerForm')}}">RegisterForm</a></p>
         <p><a class="text-blue-500 underline" href="{{route('usersList')}}">UsersList</a></p>
         <p><a class="text-blue-500 underline" href="{{route('listAndRegisterUsers')}}">ListAndRegisterUsers</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('homePage')}}">DashboardPage</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('homePage')}}">HomePage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('userPage')}}">UserPage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('testSimplePage', ['user' => 20])}}">TestSimplePage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('contactUs')}}">ContactUs</a></p>

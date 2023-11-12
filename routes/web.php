@@ -40,13 +40,3 @@ Route::get('/test-simple-page/{user}', TestSimplePage::class)->name('testSimpleP
 Route::get('/contact-us', ContactUs::class)->name('contactUs');
 Route::get('/modal', Modal::class)->name('modal');
 Route::get('/datatable/users-table', UsersTable::class)->name('datatable.usersTable');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});

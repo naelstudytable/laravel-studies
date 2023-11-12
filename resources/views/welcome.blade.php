@@ -15,13 +15,14 @@
     <body class="antialiased">
 
         <p><a class="text-blue-500 underline" href="{{route('clicker')}}">Clicker</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('registerForm')}}">registerForm</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('usersList')}}">usersList</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('listAndRegisterUsers')}}">listAndRegisterUsers</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('homePage')}}">homePage</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('userPage')}}">userPage</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('testSimplePage', ['user' => 20])}}">testSimplePage</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('contactUs')}}">contactUs</a></p>
-        <p><a class="text-blue-500 underline" href="{{route('modal')}}">modal</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('registerForm')}}">RegisterForm</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('usersList')}}">UsersList</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('listAndRegisterUsers')}}">ListAndRegisterUsers</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('homePage')}}">HomePage</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('userPage')}}">UserPage</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('testSimplePage', ['user' => 20])}}">TestSimplePage</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('contactUs')}}">ContactUs</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('modal')}}">Modal</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('datatable.usersTable')}}">Datatable/UsersTable</a></p>
     </body>
 </html>

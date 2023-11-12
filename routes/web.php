@@ -2,6 +2,7 @@
 
 use App\Livewire\Clicker;
 use App\Livewire\ContactUs;
+use App\Livewire\Datatable\UsersTable;
 use App\Livewire\HomePage;
 use App\Livewire\ListAndRegisterUsers;
 use App\Livewire\Modal;
@@ -23,9 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::view('/', 'welcome')->name('home');
 
 Route::prefix('todo')->group(function () {
     Route::get('/', Todo::class)->name('todo.index');
@@ -40,3 +39,4 @@ Route::get('/user-page/{user?}', UserPage::class)->name('userPage');
 Route::get('/test-simple-page/{user}', TestSimplePage::class)->name('testSimplePage');
 Route::get('/contact-us', ContactUs::class)->name('contactUs');
 Route::get('/modal', Modal::class)->name('modal');
+Route::get('/datatable/users-table', UsersTable::class)->name('datatable.usersTable');

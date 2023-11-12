@@ -40,7 +40,7 @@
             </div>
         </nav>
 
-        <div class="w-full sm:w-1/2 mx-auto p-6">
+        <div class="w-1/2 sm:w-full mx-auto p-6">
             <div  class="p-6 bg-white border-spacing-0 rounded-lg shadow">
                 {{ $slot }}
             </div>

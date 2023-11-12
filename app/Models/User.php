@@ -23,7 +23,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'photo'
+        'photo',
+        'is_admin'
     ];
 
     /**
@@ -51,5 +52,10 @@ class User extends Authenticatable
         return Attribute::make(
             get: fn (string $value = null) => !$value ?: 'storage/' . $value
         );
+    }
+
+    public function scopeSearch($query, $value)
+    {
+        return $query->where('name', 'like', "%$value%")->orWhere('email', 'like', "%$value%");
     }
 }

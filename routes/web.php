@@ -6,6 +6,9 @@ use App\Livewire\Datatable\UsersTable;
 use App\Livewire\HomePage;
 use App\Livewire\ListAndRegisterUsers;
 use App\Livewire\Modal;
+use App\Livewire\Navigation\AboutUs;
+use App\Livewire\Navigation\Home;
+use App\Livewire\Navigation\Terms;
 use App\Livewire\RegisterForm;
 use App\Livewire\TestSimplePage;
 use App\Livewire\Todo\Todo;
@@ -40,3 +43,8 @@ Route::get('/test-simple-page/{user}', TestSimplePage::class)->name('testSimpleP
 Route::get('/contact-us', ContactUs::class)->name('contactUs');
 Route::get('/modal', Modal::class)->name('modal');
 Route::get('/datatable/users-table', UsersTable::class)->name('datatable.usersTable');
+Route::prefix('/navigation')->group(function() {
+    Route::get('/', Home::class)->name('navigation.home');
+    Route::get('/about-us', AboutUs::class)->name('navigation.aboutUs');
+    Route::get('/terms', Terms::class)->name('navigation.terms');
+});

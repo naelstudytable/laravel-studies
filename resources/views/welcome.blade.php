@@ -24,5 +24,6 @@
         <p><a class="text-blue-500 underline" href="{{route('contactUs')}}">ContactUs</a></p>
         <p><a class="text-blue-500 underline" href="{{route('modal')}}">Modal</a></p>
         <p><a class="text-blue-500 underline" href="{{route('datatable.usersTable')}}">Datatable/UsersTable</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('navigation.aboutUs')}}">Navigation</a></p>
     </body>
 </html>

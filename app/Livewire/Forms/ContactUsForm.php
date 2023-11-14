@@ -7,7 +7,7 @@ use Livewire\Form;
 
 class ContactUsForm extends Form
 {
-    #[Rule('required|email:max:255')]
+    #[Rule('required|email:max:255', as: 'company email')]
     public $email;
 
     #[Rule('required|min:3|max:255')]

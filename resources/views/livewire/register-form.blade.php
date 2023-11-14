@@ -12,7 +12,7 @@
                     <label for="name">Name</label>
                     <input
                         id="name"
-                        wire:model='name'
+                        wire:model.live='name'
                         type="text"
                         placeholder="Name"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500

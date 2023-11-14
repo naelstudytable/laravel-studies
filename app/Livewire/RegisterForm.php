@@ -23,6 +23,11 @@ class RegisterForm extends Component
     #[Rule('nullable|sometimes|image|max:1024')]
     public $photo;
 
+    public function updatedName()
+    {
+        $this->name = ucwords($this->name);
+    }
+
     public function render()
     {
         return view('livewire.register-form');

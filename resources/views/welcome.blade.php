@@ -26,5 +26,6 @@
         <p><a class="text-blue-500 underline" href="{{route('modal')}}">Modal</a></p>
         <p><a class="text-blue-500 underline" href="{{route('datatable.usersTable')}}">Datatable/UsersTable</a></p>
         <p><a class="text-blue-500 underline" href="{{route('navigation.aboutUs')}}">Navigation</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('sweetAlertEvent')}}">Sweet Alert Event</a></p>
     </body>
 </html>

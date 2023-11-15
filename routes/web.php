@@ -3,6 +3,7 @@
 use App\Livewire\Clicker;
 use App\Livewire\ContactUs;
 use App\Livewire\Datatable\UsersTable;
+use App\Livewire\SweetAlertEvent;
 use App\Livewire\HomePage;
 use App\Livewire\ListAndRegisterUsers;
 use App\Livewire\Modal;
@@ -43,8 +44,9 @@ Route::get('/test-simple-page/{user}', TestSimplePage::class)->name('testSimpleP
 Route::get('/contact-us', ContactUs::class)->name('contactUs');
 Route::get('/modal', Modal::class)->name('modal');
 Route::get('/datatable/users-table', UsersTable::class)->name('datatable.usersTable');
-Route::prefix('/navigation')->group(function() {
+Route::prefix('/navigation')->group(function () {
     Route::get('/', Home::class)->name('navigation.home');
     Route::get('/about-us', AboutUs::class)->name('navigation.aboutUs');
     Route::get('/terms', Terms::class)->name('navigation.terms');
 });
+Route::get('/events-sweet-alert', SweetAlertEvent::class)->name('sweetAlertEvent');

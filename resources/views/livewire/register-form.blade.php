@@ -9,6 +9,14 @@
                     </div>
                 @endif
 
+                <div class="mb-4" wire:ignore>
+                    <label for="role">Role</label>
+                    <select id="role"  class="select2 w-full">
+                        <option value="admin">Admin</option>
+                        <option value="member">Member</option>
+                    </select>
+                </div>
+
                 <div class="mb-4">
                     <div class="flex space-x-4">
                         <div class="grow">

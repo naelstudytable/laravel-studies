@@ -39,6 +39,7 @@
                     type="button"
                     class="text-orange-300 hover:text-orange-500 px-1 rounded">E</button>
                 <button
+                    wire:confirm="Are you sure?"
                     wire:click='deleteTask({{$task}})'
                     type="button"
                     class="text-red-500 hover:text-red-700 px-1 rounded">D</button>

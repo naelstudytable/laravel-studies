@@ -100,6 +100,7 @@
                                             class="text-orange-300 hover:text-orange-500 px-1 rounded">E</button>
                                         <button
                                             title="Delete"
+                                            wire:confirm.prompt="Are you sure?\nType COMFIRM to comform.|CONFIRM"
                                             wire:click='deleteTask({{$task->id}})'
                                             type="button"
                                             class="text-red-500 hover:text-red-700 px-1 rounded">D</button>

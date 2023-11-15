@@ -18,6 +18,7 @@
         <p><a class="text-blue-500 underline" href="{{route('registerForm')}}">RegisterForm</a></p>
         <p><a class="text-blue-500 underline" href="{{route('usersList')}}">UsersList</a></p>
         <p><a class="text-blue-500 underline" href="{{route('listAndRegisterUsers')}}">ListAndRegisterUsers</a></p>
+        <p><a class="text-blue-500 underline" href="{{route('todo.index')}}">Todo</a></p>
         <p><a class="text-blue-500 underline" href="{{route('homePage')}}">HomePage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('userPage')}}">UserPage</a></p>
         <p><a class="text-blue-500 underline" href="{{route('testSimplePage', ['user' => 20])}}">TestSimplePage</a></p>

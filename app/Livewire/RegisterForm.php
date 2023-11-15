@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -35,8 +36,6 @@ class RegisterForm extends Component
 
     public function create()
     {
-        // sleep(2);
-
         $validated = $this->validate();
 
         if($this->photo) {
@@ -51,5 +50,11 @@ class RegisterForm extends Component
 
         $this->dispatch('user-created', $user);
         $this->dispatch('close-modal');
+    }
+
+    #[Computed]
+    public function randomName()
+    {
+        return fake('pt_BR')->name();
     }
 }

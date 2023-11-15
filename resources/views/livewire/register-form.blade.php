@@ -1,4 +1,5 @@
-<div class="flex justify-center p-5">
+<div class="flex justify-center p-5"
+wire:keydown.shift.enter='create'>
     <div class="lg:w-1/2 w-full">
         <div class="p-6 bg-white border-spacing-0 border-t-blue-500 border-t-4 rounded-b-lg shadow">
             <h4 class="text-xl mb-6">Create new user</h4>

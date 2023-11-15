@@ -35,7 +35,7 @@ class RegisterForm extends Component
 
     public function create()
     {
-        sleep(2);
+        // sleep(2);
 
         $validated = $this->validate();
 

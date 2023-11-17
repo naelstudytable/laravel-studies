@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Calendar;
 use App\Livewire\Clicker;
 use App\Livewire\ContactUs;
 use App\Livewire\Datatable\UsersTable;
@@ -50,3 +51,4 @@ Route::prefix('/navigation')->group(function () {
     Route::get('/terms', Terms::class)->name('navigation.terms');
 });
 Route::get('/events-sweet-alert', SweetAlertEvent::class)->name('sweetAlertEvent');
+Route::get('/calendar', Calendar::class)->name('calendar');
